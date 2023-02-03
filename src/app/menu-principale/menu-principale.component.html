@@ -1,0 +1,51 @@
+<div id="menu_laterale_button" (click)="get_all_transactions()">
+    <h1>Dashboard</h1>
+    <div id="parte_alta">
+        <div id="grafico">
+            <img src="assets/img/graph.svg" alt="" srcset="">
+        </div>
+        <div id="transazioni">
+            <div class="transazione" *ngFor="let tr of transazioni.slice(-6).reverse()">
+                <div id="trans-left">
+                    <div id="nome">
+                        {{tr.nome}}
+                    </div>
+                    <div id="data">
+                        {{format_date(tr.date)}}
+                    </div>
+                </div>
+                <div id="trans-right">
+                    <div id="costo" [ngStyle]="{'color':tr.costo>0?'green':'red'}">
+                        {{(Math.round(tr.costo * 100) / 100).toFixed(2)}}€
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <hr style="margin: 5%;">
+        <div id="abbonamenti">
+            <div class="transazione" *ngFor="let sub of subs">
+                <div id="trans-left">
+                    <div id="nome">
+                        {{sub.nome}}
+                    </div>
+                    <div id="data" *ngIf="sub.mese == 0">
+                        {{sub.giorno<10?'0' + sub.giorno :sub.giorno}} - mensile
+                    </div>
+                    <div id="data" *ngIf="sub.mese > 0">
+                        {{sub.giorno<10?'0' + sub.giorno :sub.giorno}}/{{sub.mese<10?'0' + sub.mese :sub.mese}} - annuale
+                    </div>
+                </div>
+                <div id="trans-right">
+                    <div id="costo" >
+                        {{(Math.round(sub.costo * 100) / 100).toFixed(2)}}€
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+</div>

@@ -1,0 +1,77 @@
+{
+  "name": "finanze",
+  "version": "0.1.0",
+  "main": "app.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng build --base-href ./ && electron .",
+    "watchh": "ng build --watch --base-href ./",
+    "electron": "electron .",
+    "dist": "electron-builder",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.1.0",
+    "@angular/common": "^15.1.0",
+    "@angular/compiler": "^15.1.0",
+    "@angular/core": "^15.1.0",
+    "@angular/forms": "^15.1.0",
+    "@angular/platform-browser": "^15.1.0",
+    "@angular/platform-browser-dynamic": "^15.1.0",
+    "@angular/router": "^15.1.0",
+    "@capacitor-community/sqlite": "^4.6.1-2",
+    "@capacitor/core": "^4.6.2",
+    "assert": "^2.0.0",
+    "crypto": "^1.0.1",
+    "moment-timezone": "^0.5.40",
+    "path": "^0.12.7",
+    "rxjs": "~7.8.0",
+    "stream": "^0.0.2",
+    "tslib": "^2.3.0",
+    "url": "^0.11.0",
+    "zone.js": "~0.12.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.1.2",
+    "@angular/cli": "~15.1.2",
+    "@angular/compiler-cli": "^15.1.0",
+    "@types/jasmine": "~4.3.0",
+    "electron": "^22.1.0",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~4.9.4"
+  },
+  "build": {
+    "productName": "PVM Player",
+    "appId": "scripter.PVMplayer",
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "pvmplayer_portable.exe"
+    },
+    "directories": {
+      "output": "electron/output",
+      "app": ".",
+      "buildResources": "electron/buildResources"
+    }
+  },
+  "browser": {
+    "http": false,
+    "https": false,
+    "net": false,
+    "path": false,
+    "stream": false,
+    "tls": false,
+    "fs":false
+  }
+}

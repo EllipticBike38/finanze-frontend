@@ -1,0 +1,19 @@
+<div id="menu_laterale_button"><h1 >Bilancio</h1></div>
+<div id="bilanci">
+<div class="bilancio">
+    <p class="titolo">Questo mese</p>
+    <h2 class="importo" [ngStyle]="{'color':this_month>0?'green':'red'}">{{(Math.round(this_month * 100) / 100).toFixed(2)}}€</h2>
+</div>
+<div class="bilancio">
+    <p class="titolo">ultimi 30 giorni</p>
+    <h2 class="importo" [ngStyle]="{'color':this_last_30_days>0?'green':'red'}">{{(Math.round(this_last_30_days * 100) / 100).toFixed(2)}}€</h2>
+</div>
+<div class="bilancio">
+    <p class="titolo">ultimi 7 giorni</p>
+    <h2 class="importo" [ngStyle]="{'color':this_last_7_days>0?'green':'red'}">{{(Math.round(this_last_7_days * 100) / 100).toFixed(2)}}€</h2>
+</div>
+<div class="bilancio">
+    <p class="titolo">Quest'anno</p>
+    <h2 class="importo" [ngStyle]="{'color':this_year>0?'green':'red'}">{{(Math.round(this_year * 100) / 100).toFixed(2)}}€</h2>
+</div>
+</div>

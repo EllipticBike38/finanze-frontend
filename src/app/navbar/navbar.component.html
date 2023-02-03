@@ -1,0 +1,48 @@
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        rel="stylesheet">
+
+</head>
+
+<div id="logo"><span class="material-symbols-rounded">
+        paid
+    </span></div>
+<div id="navbar_back" [ngStyle]="{'height':loading?'100vh':'0'}" style="
+transition: height 0.8s;">
+</div>
+<div id="menus" *ngIf="!loading">
+    <a routerLink="/">
+        Menu
+    </a><div class="divisore_verticale"></div>
+    <a routerLink="/storico">
+        Storico
+    </a><div class="divisore_verticale"></div>
+    <a onclick="window.close()">
+        Logout
+    </a>
+</div>
+
+<div aria-label="Orange and tan hamster running in a metal wheel" role="img" 
+class="wheel-and-hamster" style="position: fixed; right:calc(50% - 84px); top:calc(50% - 84px);" (click)="loading=!loading" *ngIf="loading">
+	<div class="wheel"></div>
+	<div class="hamster">
+		<div class="hamster__body">
+			<div class="hamster__head">
+				<div class="hamster__ear"></div>
+				<div class="hamster__eye"></div>
+				<div class="hamster__nose"></div>
+			</div>
+			<div class="hamster__limb hamster__limb--fr"></div>
+			<div class="hamster__limb hamster__limb--fl"></div>
+			<div class="hamster__limb hamster__limb--br"></div>
+			<div class="hamster__limb hamster__limb--bl"></div>
+			<div class="hamster__tail"></div>
+		</div>
+	</div>
+	<div class="spoke"></div>
+</div>
+<h1  style="position: fixed; right:calc(50% - 84px); top:calc(50% + 84px);  color: white;" *ngIf="loading">Loading ...</h1>

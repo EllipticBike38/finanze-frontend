@@ -1,0 +1,130 @@
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+}
+
+@keyframes rotate-hue {
+    to {
+        filter: hue-rotate(1turn);
+    }
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+}
+
+.flip-card p {
+    width: 100%;
+    word-break: break-word;
+    overflow: hidden;
+    font-size: 1.2em;
+}
+
+.flip-card-front {
+    background: linear-gradient(145deg, #c4c4c4, #979797);
+    // background: linear-gradient(145deg, #c4c4c4, #979797);
+    color: black;
+    border: 0px solid coral;
+}
+
+.flip-card-back {
+    border: 3px solid coral;
+    background: linear-gradient(145deg, #323232, #3c3c3c);
+    color: white;
+    transform: rotateY(180deg)translateX(5px);
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: running;
+}
+
+.slideshow {
+    display: inline-flex;
+    position: relative;
+    background-color: transparent;
+}
+
+.slideshow-wrapper {
+    display: block;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: darkgreen;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: darkgreen;
+    cursor: pointer;
+}
+
+.incastonato {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 39px 0px 24px -30px #8a8a8a,
+        inset -39px 0px 24px -30px #8a8a8a
+}
+ .main{
+    padding: 20px;
+    border-radius: 12px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 36px #bebebe,
+                 -20px -20px 36px #ffffff;
+ }

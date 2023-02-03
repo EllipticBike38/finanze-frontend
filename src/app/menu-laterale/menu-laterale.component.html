@@ -1,0 +1,12 @@
+<div id="menu_laterale_button" onclick="createWindow()">
+    <h1>Aggiungi Transazione</h1>
+</div>
+<label for="name">Name: </label>
+<input id="titolo" type="text" [formControl]="titolo">
+<input id="giorno" type="text" [formControl]="giorno">
+<input id="mese" type="text" [formControl]="mese">
+<input id="importo" type="text" [formControl]="importo">
+<input id="descrizione" type="text" [formControl]="descrizione">
+<input type="submit">
+{{titolo.value}}
+

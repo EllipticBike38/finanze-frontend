@@ -1,0 +1,34 @@
+<div style="padding:80px; margin: 0;">
+    <div id="menu_laterale_button" class="main">
+    <div>
+        <div><h1>Abbonamenti</h1></div>
+    </div>
+    <div class="slideshow-wrapper " id="subs-slides-wrapper">
+    <div class="incastonato">
+        <div class="slideshow " id="subs-slides">
+            <div class="flip-card" *ngFor="let ab of subs">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title">{{ab.nome}}</p>
+                        <p class="title" style="color: rgb(104, 104, 104);">€{{ab.costo}}</p>
+                        <p>{{ab.giorno<10?'0'+ab.giorno.toString():ab.giorno.toString()}}{{ab.mese!=0?'/'+(ab.mese<10?'0'+ab.mese.toString():ab.mese.toString()):' - ogni mese'}}</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">{{ab.nome}}</p>
+                        <p>{{ab.descrizione}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <input type="range" min="1" max="1000" [formControl]="slideAbb"
+            class="slider"
+            id="myRange" style="margin:0">
+
+    </div>
+    <hr>
+    <div>
+        <div><h1>Transazioni</h1></div>
+    </div>
+    
+</div>
+</div>
