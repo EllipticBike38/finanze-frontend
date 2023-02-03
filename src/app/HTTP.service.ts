@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class HTTPService {
     constructor(private http: HttpClient) {}
 
-    base_url='http://3.84.27.211'
+    base_url='http://107.23.24.241'
   
     get(url: string) {
       return this.http.get(this.base_url+url);
